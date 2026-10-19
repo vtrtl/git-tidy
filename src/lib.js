@@ -115,7 +115,6 @@ function findCandidates(branches, { merged, days, now = Date.now(), skip = [] })
     .sort((a, b) => b.ageDays - a.ageDays);
 }
 
-/** Turn "1,3,5-7" or "all" into a sorted list of zero-based indexes. */
 function parseSelection(input, max) {
   const text = input.trim().toLowerCase();
   if (!text) return [];
@@ -141,7 +140,6 @@ function parseSelection(input, max) {
   return [...picked].sort((a, b) => a - b).map((n) => n - 1);
 }
 
-/** Merged branches use safe `-d`; unmerged stale ones need `-D`. */
 function deleteBranch(branch) {
   git(['branch', branch.merged ? '-d' : '-D', branch.name]);
 }
