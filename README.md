@@ -59,7 +59,7 @@ Because it installs as `git-tidy`, git also lets you call it as `git tidy`.
 ## Development
 
 ```bash
-git clone https://github.com/<your-username>/git-tidy
+git clone https://github.com/vtrtl/git-tidy
 cd git-tidy
 npm test
 node bin/git-tidy.js --dry-run
